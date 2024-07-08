@@ -1,0 +1,29 @@
+:root {
+    --primary-color: #DDC38F;
+    --secondary-color: #F1C97B;
+    --font-size-large: 2rem;
+    --font-size-medium: 1.5rem;
+    --font-size-small: 1rem;
+    --padding: 10px;
+    --font-family:'Work Sans', Arial;
+  }
+  
+  body {
+    background-color: var(--primary-color);
+    color: #050505;
+    font-size: var(--font-size-medium);
+    padding: var(--padding);
+  }
+  
+  header {
+    background-color: var(--secondary-color);
+    padding: var(--padding);
+  }
+  
+  h1 {
+    font-size: var(--font-size-large);
+  }
+  
+  p {
+    font-size: var(--font-size-small);
+  }
