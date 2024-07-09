@@ -4,7 +4,7 @@ const DATA_PERSISTENCE = "DATA_PERSISTENCE";
 
 const UseDataPersistence = () => {
 
-    const setDataPersistence = ({ key, data }: DataPersistenceProps) => {
+    const setDataPersistence = ({ key, data, source }: DataPersistenceProps) => {
         try {
             if (data && data.username && data.token) {
                 const globalSavedData = getGlobalDataPersistence();
@@ -12,15 +12,21 @@ const UseDataPersistence = () => {
                 const newData = { ...data };
 
                 if (savedData) {
+                    const newData = source === "login"
+                        ? {
+                            ...savedData,
+                            ...data,
+                            favoriteProducts: savedData.favoriteProducts
+                        }
+                        : { ...savedData, ...data }
                     const newGlobalData =
                         globalSavedData.map(
                             data => data.username === savedData.username
-                                ? { ...savedData, ...newData }
+                                ? newData
                                 : data)
 
                     localStorage.setItem(DATA_PERSISTENCE, JSON.stringify(newGlobalData))
                 } else {
-
                     localStorage.setItem(DATA_PERSISTENCE, JSON.stringify([...globalSavedData, newData]));
                 }
             }

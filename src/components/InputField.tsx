@@ -1,14 +1,4 @@
-/* import Wrapper from "../assets/styled-wrappers/InputWrapper"; */
-import { ParentType } from "../types/base";
-
-export type InputFieldProps = {
-    labelText: string;
-    inputName: string;
-    inputType: string;
-    isRequired: boolean;
-    handlerOnChange?: (e:React.ChangeEvent<HTMLInputElement>) => void;
-    parentType?:ParentType;
-}
+import { InputFieldProps } from "../types/input";
 
 const InputField: React.FC<InputFieldProps> = (
     {

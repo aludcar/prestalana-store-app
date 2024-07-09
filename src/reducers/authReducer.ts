@@ -5,7 +5,7 @@ import { AUTH_USER, CLOSE_USER_SESSION } from "../actions/authActions";
 const initialState: AuthUser = {
     username: "",
     token: "",
-    isAuthenticated: true,
+    isAuthenticated: false,
 }
 const authReducer = (state: AuthUser = initialState, action: AuthActions): AuthUser => {
     switch (action.type) {

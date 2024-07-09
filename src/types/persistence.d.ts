@@ -4,6 +4,7 @@ import { Product } from "../types/products";
 export type DataPersistenceProps = {
     key?: string;
     data?: DataPersistence;
+    source?:SourceType;
 }
 
 export type DataPersistence = AuthUser & {
@@ -12,3 +13,5 @@ export type DataPersistence = AuthUser & {
 }
 
 export type GlobalDataPersistence = DataPersistence[];
+
+type SourceType = "login" | "favorites";

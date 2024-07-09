@@ -9,7 +9,7 @@ export const addFavoriteProduct = (newProduct: Product): ProductsActions => ({
 })
 
 export const populateFavoriteList = (favoriteProducts: Product[]): ProductsActions => ({
-    type: ADD_FAVORITE_PRODUCT,
+    type: POPULATE_FAVORITE_LIST,
     payload: favoriteProducts
 })
 

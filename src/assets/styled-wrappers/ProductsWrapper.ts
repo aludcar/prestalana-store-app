@@ -10,6 +10,7 @@ const Wrapper = styled.section`
     overflow-y:auto;
     border-radius:24px;
     background-color:var(--secondary-color);
+    margin-top: 10px;
 `;
 
 export default Wrapper;

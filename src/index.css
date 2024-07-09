@@ -6,6 +6,7 @@
     --white-color:#FFF;
     --gray-color:#E8E9EA;
     --ocre-color:#A37F39;
+    --error-color-text:red;
     --font-size-large: 60px;
     --font-size-medium: 25px;
     --font-size-small: 16px;
@@ -14,6 +15,7 @@
   }
   
   html,body {
+    font-family: var(--font-family);
     background-color: var(--primary-color);
     color: var(--text-color);
     padding: 0;

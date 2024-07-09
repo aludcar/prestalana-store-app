@@ -8,4 +8,10 @@ export type SortByField<T> = {
     field: keyof T;
 }
 
-export type ParentType = "products" | "favorites" | "cart" | "form"
+export type ParentType = "products" | "favorites" | "cart" | "form";
+
+export type ResponseType = {
+    error: unknown | null;
+    status: "success" | "failure";
+    data?: unknown;
+  };

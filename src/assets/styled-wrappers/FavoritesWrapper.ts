@@ -9,7 +9,7 @@ const Wrapper = styled.section`
     height:556px;
     background-color:var(--tertiary-color);
     border-radius:24px;
-    gap:25px;
+    gap:40px;
     overflow-y: auto;
 
     .favorite-row-text{

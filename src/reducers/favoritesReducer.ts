@@ -22,8 +22,7 @@ const favoritesReducer = (state: ProductsState = initialState, action: ProductsA
 }
 
 const handlePopulateFavoriteProducts = (state: ProductsState, favoriteProducts: Product[]): ProductsState => {
-
-    return favoriteProducts.length > 1 ? {
+    return favoriteProducts.length > 0 ? {
         ...state,
         products: favoriteProducts
     } : state;

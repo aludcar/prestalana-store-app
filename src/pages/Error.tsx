@@ -2,15 +2,13 @@ import { useRouteError } from "react-router-dom"
 import Wrapper from "../assets/styled-wrappers/ErrorWrapper";
 import { NavLink } from "react-router-dom";
 import { FaUserSecret, FaGrinBeamSweat, FaArrowLeft } from "react-icons/fa";
+import { RouterError } from "../types/routes";
 
-type RouterError = {
-  status: number;
-  message: string
-}
 
 const Error: React.FC = () => {
 
   const error: RouterError = useRouteError() as RouterError;
+  console.log(error.message);
   return (
     <Wrapper>
       {

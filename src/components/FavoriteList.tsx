@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Product as ProductType, ProductsState } from '../types/products';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFavoriteProduct } from '../actions/favoritesActions'
+import { addFavoriteProduct} from '../actions/favoritesActions'
 import Product from './Product';
 import { AuthUser } from '../types/auth';
 import UseDataPersistence from '../hooks/UseDataPersistence';
@@ -14,21 +14,35 @@ const FavoriteList: React.FC = () => {
     const { setDataPersistence } = UseDataPersistence();
     const dispatch = useDispatch();
 
+    //Update or set favorites products from localStorage
     useEffect(() => {
-        setDataPersistence({
-            key: authUser.username,
-            data: {
-                ...authUser,
-                favoriteProducts: products
-            }
-        })
-    }, [products, setDataPersistence, authUser])
+        if (authUser.isAuthenticated && authUser.username) {
+            setDataPersistence({
+                key: authUser.username,
+                data: {
+                    ...authUser,
+                    favoriteProducts: products
+                },
+                source:"favorites"
+            })
+
+        }
+    }, [
+        products,
+        setDataPersistence,
+        authUser
+    ])
 
     //Add new products in favorite list
     const handleOnDrop = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
         const product: ProductType = JSON.parse(e.dataTransfer.getData('text/plain'));
-        if (product && product.parentType && product.parentType !== "cart") {
+
+        if (product &&
+            product.parentType &&
+            product.parentType !== "cart" &&
+            products.length < 3
+        ) {
             dispatch(addFavoriteProduct(product));
         }
     }

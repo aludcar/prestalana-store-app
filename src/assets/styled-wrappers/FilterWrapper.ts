@@ -8,13 +8,15 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin:4px 0px;
+    margin-top:26px;
+    gap:10px;
     input{
         width:100%;
         height:36px;
         border-radius:17px;
         border:none;
         color:var(--text-color);
+        padding:0px 20px;
     }
     label{
         color:var(--text-color);

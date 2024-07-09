@@ -36,6 +36,7 @@ const Wrapper = styled.section`
                 border-radius:32px;
                 border:solid 1px var(--gray-color);
                 color:var(--text-color);
+                padding:0px 20px;
             }
             label{
                 color:var(--text-color);
@@ -69,12 +70,15 @@ const Wrapper = styled.section`
             flex-direction:column;
             justify-content: center;
             align-items: center;
-            width:199px;
+            width:210px;
             height:28px;
             margin:8px 0px;
             a{
                 color:var(--text-color);
             }
+        }
+        .form-row-error{
+            color:var(--error-color-text)
         }
     }
 `
