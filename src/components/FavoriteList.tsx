@@ -5,6 +5,7 @@ import { addFavoriteProduct } from '../actions/favoritesActions'
 import Product from './Product';
 import { AuthUser } from '../types/auth';
 import UseDataPersistence from '../hooks/UseDataPersistence';
+import Wrapper from '../assets/styled-wrappers/FavoritesWrapper';
 
 const FavoriteList: React.FC = () => {
 
@@ -37,16 +38,19 @@ const FavoriteList: React.FC = () => {
         e.preventDefault();
     }
     return (
-        <section
+        <Wrapper
             onDrop={handleOnDrop}
-            onDragOver={handleOnDragOver}
-            style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                border: 'red solid'
-            }}>Favorites{
-                products?.map((product) => (<Product key={product.id} productProp={product} parentType="favorites" />))
-            }</section>
+            onDragOver={handleOnDragOver}>
+            <div className='favorite-row-text'>
+                <h2>Drag and drop to add your favourites</h2>
+            </div>
+            {
+                products?.map((product) => (
+                    <div key={product.id} className='favorite-row-product'>
+                        <Product productProp={product} parentType="favorites" />
+                    </div>))
+            }
+        </Wrapper>
     )
 }
 

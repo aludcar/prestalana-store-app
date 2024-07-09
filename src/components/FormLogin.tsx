@@ -2,6 +2,7 @@ import React from 'react';
 import { Form as FormType } from '../types/form';
 import useAuthenticateUser from '../hooks/UseAuthenticateUser';
 import { useNavigate } from 'react-router-dom';
+import Wrapper from '../assets/styled-wrappers/LoginWrapper';
 
 const FormLogin: React.FC<FormType> = ({ children }) => {
     const navigate = useNavigate();
@@ -14,16 +15,17 @@ const FormLogin: React.FC<FormType> = ({ children }) => {
             formData.get('username') as string,
             formData.get('password') as string
         );
-        
+
         navigate("/");
     };
 
     return (
-        <div>
+        <Wrapper>
             <form onSubmit={handlerSubmit}>
                 {children}
             </form>
-        </div>
+        </Wrapper>
+
     );
 };
 

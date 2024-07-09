@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const Wrapper = styled.main`
-display:flex;
-justify-content:center;
-align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
 `
 
 export default Wrapper;

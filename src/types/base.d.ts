@@ -7,3 +7,5 @@ export type SortByField<T> = {
     typeOfField: 'string' | 'number';
     field: keyof T;
 }
+
+export type ParentType = "products" | "favorites" | "cart" | "form"

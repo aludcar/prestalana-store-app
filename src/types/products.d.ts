@@ -1,4 +1,4 @@
-import { BaseType } from "./base";
+import { BaseType, ParentType } from "./base";
 
 export type ProductRating = {
     rate: number;
@@ -29,5 +29,3 @@ export type ProductsState = {
 export type ProductsActions = BaseType & {
     payload: Product[] | Product | string
 }
-
-export type ParentType = "products" | "favorites" | "cart" | "form"

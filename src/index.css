@@ -1,29 +1,30 @@
 :root {
     --primary-color: #DDC38F;
     --secondary-color: #F1C97B;
-    --font-size-large: 2rem;
-    --font-size-medium: 1.5rem;
-    --font-size-small: 1rem;
-    --padding: 10px;
-    --font-family:'Work Sans', Arial;
+    --tertiary-color: #F8BF50;
+    --text-color:#050505;
+    --white-color:#FFF;
+    --gray-color:#E8E9EA;
+    --ocre-color:#A37F39;
+    --font-size-large: 60px;
+    --font-size-medium: 25px;
+    --font-size-small: 16px;
+    --font-size-mini: 12px;
+    --font-family:'Work Sans', sans-serif;
   }
   
-  body {
+  html,body {
     background-color: var(--primary-color);
-    color: #050505;
-    font-size: var(--font-size-medium);
-    padding: var(--padding);
-  }
-  
-  header {
-    background-color: var(--secondary-color);
-    padding: var(--padding);
-  }
-  
-  h1 {
-    font-size: var(--font-size-large);
+    color: var(--text-color);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
   }
   
   p {
     font-size: var(--font-size-small);
+  }
+
+  span{
+    font-size:var(--font-size-mini);
   }

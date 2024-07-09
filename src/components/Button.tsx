@@ -11,12 +11,14 @@ const Button: React.FC<ButtonProps> = ({ type, buttonText, parentType, handleBut
         }
     }
     return (
-        <><button
+        <button
             /* className={aqui pregunta si isCartParent cambia su forma y aplica un icon} */
             type={type}
             onClick={handleClick} >
-            {parentType === "cart" ? <FaRegTrashAlt /> : buttonText}
-        </button></>
+            <span>
+                {parentType === "cart" ? <FaRegTrashAlt /> : buttonText}
+            </span>
+        </button>
     )
 }
 

@@ -1,4 +1,4 @@
-import { ParentType } from "./products";
+import { ParentType } from "./base";
 
 export type ButtonType = "submit" | "button";
 

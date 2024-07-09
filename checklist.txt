@@ -15,9 +15,9 @@
 [x] Listar y visualizar productos del carrito
 [x] Eliminar productos del carrito
 [x] Implementacion de Redux para manejo del estado global
-[] Implementacion de Styled-Components para los estilos
+[x] Implementacion de Styled-Components para los estilos
 [x] Incluir ESlint personalizado ( MEJORARLO Y ESTUDIARLO )
-[] Pasar el mockup de figma a web.
+[x] Pasar el mockup de figma a web.
 
 Extra:
 [] Mejor manejo de errores

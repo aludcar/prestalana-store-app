@@ -5,6 +5,7 @@ import { ProductsState, Product as ProductType } from '../types/products';
 import Product from './Product';
 import customFetch from '../utils/customFetch';
 import { removeFavoriteProduct } from '../actions/favoritesActions';
+import Wrapper from '../assets/styled-wrappers/ProductsWrapper';
 
 const ProductList: React.FC = () => {
     const dispatch = useDispatch()
@@ -12,7 +13,7 @@ const ProductList: React.FC = () => {
 
     useEffect(() => {
         const dataFetch = async () => {
-            const response = await customFetch.get("/products?limit=8");
+            const response = await customFetch.get("/products?limit=6");
             dispatch(initProducts(response.data))
         }
         dataFetch();
@@ -34,14 +35,10 @@ const ProductList: React.FC = () => {
     };
 
     return (
-        <section
+        <Wrapper
             onDrop={handleOutsideDrop}
             onDragOver={handleDragOver}
-            style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                border: 'pink solid'
-            }}>
+        >
 
             {
                 !products || products.length < 1
@@ -50,7 +47,7 @@ const ProductList: React.FC = () => {
                         <Product key={product.id} productProp={product} parentType="products" />
                     )))
             }
-        </section>
+        </Wrapper>
     )
 }
 

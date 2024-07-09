@@ -2,22 +2,27 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { ProductsState } from '../types/products';
 import Product from './Product';
+import Wrapper from '../assets/styled-wrappers/CartWrapper';
 
 const CartList: React.FC = () => {
   const { products } = useSelector(((state: { cartReducer: ProductsState }) => state.cartReducer));
 
   return (
-    <aside>
-      Cart
+    <Wrapper>
+      <div className='cart-row-text'>
+        <h2>Cart</h2>
+      </div>
       {
         products?.map((product) => (
-          <Product
-            key={product.id}
-            productProp={product}
-            parentType="cart"
-          />))
+          <div key={product.id} className='cart-row-product'>
+            <Product
+              productProp={product}
+              parentType="cart"
+            />
+          </div>
+        ))
       }
-    </aside>
+    </Wrapper>
   )
 }
 

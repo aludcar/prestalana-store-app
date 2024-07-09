@@ -4,6 +4,7 @@ import Button from './Button'
 import { useDispatch } from 'react-redux';
 import { addProduct, removeProduct } from '../actions/cartActions';
 import { Product as ProductType } from '../types/products';
+import Wrapper from '../assets/styled-wrappers/ProductWrapper';
 
 const Product: React.FC<ProductProps> = ({ productProp, parentType }) => {
 
@@ -26,26 +27,30 @@ const Product: React.FC<ProductProps> = ({ productProp, parentType }) => {
         e.dataTransfer.effectAllowed = "move";
     }
     return (
-        <div
+        <Wrapper
+            parentType={parentType}
             onDragStart={handleOnDragStart}
-            draggable={parentType !== "cart"}
-            style={{ border: 'aliceblue solid', }} >
-            {/* Quitar los line styles */}
-            <img style={{
-                width: '105px',
-                height: '105px',
-            }} src={product.image} alt={product.title} />
-            <p>{product.title}</p>
+            draggable={parentType !== "cart"} >
+
+            <div className='product-row-img'>
+                <img src={product.image} alt={product.title} />
+            </div>
+            <div className='product-row-text'>
+                <span>{product.title?.length >= 14 ? `${product.title.substring(0, 13)}...` : product.title}</span>
+            </div>
+
             {
                 parentType !== "favorites"
-                && <Button
-                    type="button"
-                    buttonText='Add to Cart'
-                    parentType={parentType}
-                    handleButtonClick={parentType === "cart" ? handleRemoveProductFromCart : handleAddProductToCart} />
+                && <div className='product-row-button'>
+                    <Button
+                        type="button"
+                        buttonText='Add to Cart'
+                        parentType={parentType}
+                        handleButtonClick={parentType === "cart" ? handleRemoveProductFromCart : handleAddProductToCart} />
+                </div>
             }
 
-        </div>
+        </Wrapper>
     )
 }
 
