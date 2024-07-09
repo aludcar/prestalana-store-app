@@ -1,11 +1,11 @@
 [x] Hacer uso de TypeScript
 [x] Autenticacion de Usuarios
-[] Persistencia de datos del usuario para guardar favoritos
+[x] Persistencia de datos del usuario para guardar favoritos
     [x] Variable en el localStorage con un el nombre de usuario como key
     [x] Persistencia de datos como username, token, tiempo de vida, favoritos como string "JSON.stringify"
     [x] Persistencia de datos Favoritos cuando el usuario cierre seccion VALIDAR POR QUE SOBRESCRIBE EL PRIMER ELEMENTO
-    [] Que cuando exista persistencia de un usuario authenticado me deje pasar al dasboard
-    [] Los favoritos se guardan bien mientras la session esta activa, pero cuando cierro y cambio de ventana,
+    [x] Que cuando exista persistencia de un usuario authenticado me deje pasar al dasboard
+    [x] Los favoritos se guardan bien mientras la session esta activa, pero cuando cierro y cambio de ventana,
         al momento de cargar los products favoritos en memoria se tosta y todo lo deja en un elemento del array
 [x] Lista Productos
 [x] Filtrar Productos
@@ -20,6 +20,6 @@
 [x] Pasar el mockup de figma a web.
 
 Extra:
-[] Mejor manejo de errores
-[] Control del Bounce en los buttones
-[] Encriptacion de los datos sencibles, como username y la lista de favoritos
+[-] Mejor manejo de errores
+[No] Control del Bounce en los buttones
+[No] Encriptacion de los datos sencibles, como username y la lista de favoritos
